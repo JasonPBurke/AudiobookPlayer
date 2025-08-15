@@ -15,7 +15,7 @@ type BookListItemProps = {
 
 export default function BookListItem({ book }: BookListItemProps) {
   return (
-    <View className="flex-row gap-4 items-center">
+    <View className="flex-row gap-4 items-center top-10">
       <Image
         source={{ uri: book.thumbnail_url }}
         className="w-20 aspect-square rounded-sm"
