@@ -1,9 +1,16 @@
-import { Tabs } from "expo-router";
+import { Redirect, Tabs } from "expo-router";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import { useAuth } from "@clerk/clerk-expo";
 
 export default function TabsLayout() {
+  const { isSignedIn } = useAuth();
+
+  if (!isSignedIn) {
+    return <Redirect href="/sign-in" />;
+  }
+
   return (
-    <Tabs>
+    <Tabs screenOptions={{ tabBarShowLabel: false }}>
       <Tabs.Screen
         name="index"
         options={{
@@ -19,6 +26,15 @@ export default function TabsLayout() {
           title: "Discover",
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="search" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="profile"
+        options={{
+          title: "Profile",
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="exit-outline" size={size} color={color} />
           ),
         }}
       />

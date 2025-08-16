@@ -16,10 +16,10 @@ const theme = {
 
 export default function RootLayout() {
   return (
-    <ClerkProvider tokenCache={tokenCache}>
-      <ThemeProvider value={theme}>
+    <ThemeProvider value={theme}>
+      <ClerkProvider tokenCache={tokenCache}>
         <Slot />
-      </ThemeProvider>
-    </ClerkProvider>
+      </ClerkProvider>
+    </ThemeProvider>
   );
 }

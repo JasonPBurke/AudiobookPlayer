@@ -1,6 +1,6 @@
 import { useSignIn } from "@clerk/clerk-expo";
 import { Link, useRouter } from "expo-router";
-import { Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Alert, Text, TextInput, TouchableOpacity, View } from "react-native";
 import React from "react";
 
 export default function Page() {
@@ -25,10 +25,11 @@ export default function Page() {
       // and redirect the user
       if (signInAttempt.status === "complete") {
         await setActive({ session: signInAttempt.createdSessionId });
-        router.replace("/");
+        // router.replace("/");
       } else {
         // If the status isn't complete, check why. User might need to
         // complete further steps.
+        Alert.alert("Error", "Invalid email or password");
         console.error(JSON.stringify(signInAttempt, null, 2));
       }
     } catch (err) {
