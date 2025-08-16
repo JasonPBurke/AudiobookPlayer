@@ -25,6 +25,8 @@ export default function BookListItem({ book }: BookListItemProps) {
         <Text className="text-gray-400">{book.author}</Text>
       </View>
       <AntDesign className="" name="playcircleo" size={24} color="gainsboro" />
+      <AntDesign className="" name="download" size={24} color="gainsboro" />
+      <AntDesign className="" name="plus" size={24} color="gainsboro" />
     </View>
   );
 }
