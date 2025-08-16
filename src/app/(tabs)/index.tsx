@@ -7,7 +7,7 @@ export default function App() {
   return (
     <FlatList
       data={books}
-      contentContainerClassName="gap-4 p-2"
+      contentContainerClassName="gap-24 p-2"
       renderItem={({ item }) => <BookListItem book={item} />}
     />
   );
