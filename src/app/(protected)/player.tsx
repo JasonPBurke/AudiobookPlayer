@@ -14,8 +14,7 @@ export default function Player() {
   const player = useAudioPlayer({ uri: book.audio_url });
   const playerStatus = useAudioPlayerStatus(player);
 
-  console.log(JSON.stringify(playerStatus, null, 2));
-  console.log(JSON.stringify(player, null, 2));
+  // console.log(JSON.stringify(playerStatus, null, 2));
 
   return (
     <SafeAreaView className="flex-1 bg-nord1 p-4 py-20 gap-4">
@@ -36,6 +35,7 @@ export default function Player() {
           {book.title}
         </Text>
         <PlaybackBar
+          onSeek={(seconds: number) => player.seekTo(seconds)}
           currentTime={playerStatus.currentTime}
           duration={playerStatus.duration}
         />
@@ -53,14 +53,18 @@ export default function Player() {
             size={24}
             color="#e5e9f0"
           />
-          <Ionicons
+          <Pressable
+            hitSlop={12}
             onPress={() =>
               playerStatus.playing ? player.pause() : player.play()
             }
-            name={playerStatus.playing ? "pause" : "play"}
-            size={50}
-            color="#d8dee9"
-          />
+          >
+            <Ionicons
+              name={playerStatus.playing ? "pause" : "play"}
+              size={50}
+              color="#d8dee9"
+            />
+          </Pressable>
 
           <Ionicons
             onPress={() => player.seekTo(playerStatus.currentTime + 10)}
