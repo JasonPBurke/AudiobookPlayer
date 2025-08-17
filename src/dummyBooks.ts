@@ -4,7 +4,7 @@ export default [
     title: "The Great Gatsby",
     author: "F. Scott Fitzgerald",
     audio_url:
-      "https://ia802206.us.archive.org/9/items/thenewyear_2501.poem_librivox/newyear_cawein_ar_128kb.mp3",
+      "https://ia903403.us.archive.org/34/items/greatgatsby_2101_librivox/greatgatsby_01_fitzgerald_128kb.mp3",
     thumbnail_url:
       "https://m.media-amazon.com/images/I/71FTb9X6wsL._AC_UF1000,1000_QL80_.jpg",
   },
@@ -75,7 +75,7 @@ export default [
     title: "The Adventures of Huckleberry Finn",
     author: "Mark Twain",
     audio_url:
-      "https://archive.org/download/huck_finn_librivox/huck_finn_librivox_64kb.m3u",
+      "https://dn720003.ca.archive.org/0/items/huck_finn_librivox/huckfinn_01_twain_apc.mp3",
     thumbnail_url:
       "https://archive.org/download/huck_finn_librivox/Huck_Finn.jpg?scale=1&rotate=0&scale=1&rotate=0&scale=1&rotate=0",
   },
