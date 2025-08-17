@@ -17,21 +17,16 @@ type BookListItemProps = {
 export default function BookListItem({ book }: BookListItemProps) {
   return (
     <Link href="/player" asChild>
-      <Pressable className="flex-row gap-4 items-center top-10">
+      <Pressable className="flex-row gap-4 items-center">
         <Image
           source={{ uri: book.thumbnail_url }}
           className="w-20 aspect-square rounded-sm"
         />
         <View className="gap-2 flex-1">
-          <Text className="text-xl font-bold text-gray-100">{book.title}</Text>
+          <Text className="text-xl font-bold text-nord4">{book.title}</Text>
           <Text className="text-red-400">{book.author}</Text>
         </View>
-        <AntDesign
-          className=""
-          name="playcircleo"
-          size={24}
-          color="gainsboro"
-        />
+        <AntDesign className="" name="playcircleo" size={24} color="#d8dee9" />
       </Pressable>
     </Link>
   );

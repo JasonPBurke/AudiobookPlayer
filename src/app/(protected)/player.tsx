@@ -9,7 +9,7 @@ import PlaybackBar from "@/components/PlaybackBar";
 
 import dummyBooks from "@/dummyBooks";
 
-export default function Player() {
+export default function PlayerScreen() {
   const book = dummyBooks[0];
 
   const player = useAudioPlayer({ uri: book.audio_url });
