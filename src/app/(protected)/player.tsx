@@ -1,5 +1,6 @@
 import { View, Text, Pressable, Image } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import { router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useAudioPlayer, useAudioPlayerStatus } from "expo-audio";
@@ -40,17 +41,17 @@ export default function Player() {
           duration={playerStatus.duration}
         />
 
-        <View className="flex-row items-center justify-between mt-8">
-          <Ionicons
+        <View className="flex-row items-center justify-around mt-8">
+          <MaterialCommunityIcons
             onPress={() => player.seekTo(0)}
-            name="play-skip-back"
+            name="step-backward"
             size={24}
             color="#e5e9f0"
           />
-          <Ionicons
-            onPress={() => player.seekTo(playerStatus.currentTime - 10)}
-            name="play-back"
-            size={24}
+          <MaterialCommunityIcons
+            onPress={() => player.seekTo(playerStatus.currentTime - 15)}
+            name="rewind-15"
+            size={28}
             color="#e5e9f0"
           />
           <Pressable
@@ -58,23 +59,24 @@ export default function Player() {
             onPress={() =>
               playerStatus.playing ? player.pause() : player.play()
             }
+            className="bg-nord0 rounded-full p-2"
           >
-            <Ionicons
+            <MaterialCommunityIcons
               name={playerStatus.playing ? "pause" : "play"}
               size={50}
-              color="#d8dee9"
+              color="#bf616a"
             />
           </Pressable>
 
-          <Ionicons
-            onPress={() => player.seekTo(playerStatus.currentTime + 10)}
-            name="play-forward"
-            size={24}
+          <MaterialCommunityIcons
+            onPress={() => player.seekTo(playerStatus.currentTime + 15)}
+            name="fast-forward-15"
+            size={28}
             color="#e5e9f0"
           />
-          <Ionicons
+          <MaterialCommunityIcons
             onPress={() => player.seekTo(playerStatus.duration)}
-            name="play-skip-forward"
+            name="av-timer"
             size={24}
             color="#e5e9f0"
           />
