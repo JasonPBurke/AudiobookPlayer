@@ -3,16 +3,13 @@ import { Ionicons } from "@expo/vector-icons";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import { router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { useAudioPlayer, useAudioPlayerStatus } from "expo-audio";
+import { useAudioPlayerStatus } from "expo-audio";
 
 import PlaybackBar from "@/components/PlaybackBar";
-
-import dummyBooks from "@/dummyBooks";
+import { usePlayer } from "@/providers/PlayerProvider";
 
 export default function PlayerScreen() {
-  const book = dummyBooks[0];
-
-  const player = useAudioPlayer({ uri: book.audio_url });
+  const { player, book } = usePlayer();
   const playerStatus = useAudioPlayerStatus(player);
 
   // console.log(JSON.stringify(playerStatus, null, 2));
