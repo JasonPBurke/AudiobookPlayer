@@ -9,6 +9,8 @@ export default function FloatingPlayer() {
   const { player, book } = usePlayer();
   const playerStatus = useAudioPlayerStatus(player);
 
+  console.log(book);
+
   if (!book) return null;
 
   return (

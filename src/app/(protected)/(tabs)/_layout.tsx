@@ -12,7 +12,7 @@ export default function TabsLayout() {
           <BottomTabBar {...props} />
         </>
       )}
-      screenOptions={{ tabBarShowLabel: false }}
+      screenOptions={{ tabBarShowLabel: false, headerTitleAlign: "center" }}
     >
       <Tabs.Screen
         name="index"
